@@ -1,4 +1,5 @@
 
+
 import os
 
 from dotenv import load_dotenv
@@ -15,7 +16,7 @@ def pick_llm(level: str) -> ChatOpenAI:
 
     models = {
         "low": "liquid/lfm-3-1.7b",
-        "medium": "thinkingmachines/inkling-2-small",
+        "medium": "nvidia/nemotron-3-ultra-550b-a55b:free",
         "high": "nvidia/nemotron-3-ultra-550b-a55b"
     }
 
@@ -32,8 +33,3 @@ def pick_llm(level: str) -> ChatOpenAI:
     )
 
 
-llm_low = pick_llm("low")
-
-response = llm_low.invoke("What is Agentic AI?")
-
-print(response.content)
